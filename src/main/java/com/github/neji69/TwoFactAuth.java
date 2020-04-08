@@ -15,13 +15,14 @@ public class TwoFactAuth {
         smsCodeLocator.setValue(smsCode);
         return this;
     }
-    @Step ("Нажимаем кнопку авторизироваться по СМС коду")
+
+    @Step("Нажимаем кнопку авторизироваться по СМС коду")
     public Home clickButtonSmsAuthorization() {
         smsButtonLocator.click();
         return new Home();
     }
 
     public Home smsAuth(String smsCode) {
-       return inputSmsCode(smsCode).clickButtonSmsAuthorization();
+        return inputSmsCode(smsCode).clickButtonSmsAuthorization();
     }
 }

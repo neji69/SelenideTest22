@@ -1,7 +1,7 @@
 package com.github.neji69;
 
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import java.util.regex.Pattern;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -16,7 +16,7 @@ public class TestCaseHomework {
         String smsCode = "0000";
         Pattern pattern = Pattern.compile("[0-9]{1,3} [0-9]{1,3} [0-9]{1,3}[.][0-9][0-9] [₽]"); //Проверка формата суммы на странице "обзор"
 
-        open("https://idemo.bspb.ru" , BspbRuAuth.class)
+        open("https://idemo.bspb.ru", BspbRuAuth.class)
                 .authorize(login, password)
                 .smsAuth(smsCode)
                 .buttonOverviewClick()
