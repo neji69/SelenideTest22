@@ -1,11 +1,16 @@
 package com.github.neji69;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class Home {
-    public WebElement buttonOverview = $(By.id("bank-overview"));
+    private SelenideElement buttonOverview = $(byId("bank-overview"));
+
+    public OverviewPage buttonOverviewClick() {
+        buttonOverview.click();
+        return new OverviewPage();
+    }
 }
 

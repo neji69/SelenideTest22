@@ -1,11 +1,25 @@
 package com.github.neji69;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selenide.$;
 
 public class TwoFactAuth {
-    public WebElement smsCodeLocator = $(By.id("otp-code"));
-    public WebElement smsButtonLocator = $(By.id("login-otp-button"));
+    private SelenideElement smsCodeLocator = $(byId("otp-code"));
+    private SelenideElement smsButtonLocator = $(byId("login-otp-button"));
+
+    public TwoFactAuth inputSmsCode(String smsCode) {
+        smsCodeLocator.setValue(smsCode);
+        return this;
+    }
+
+    public Home clickButtonSmsAuthorization() {
+        smsButtonLocator.click();
+        return new Home();
+    }
+
+    public Home smsAuth(String smsCode) {
+       return inputSmsCode(smsCode).clickButtonSmsAuthorization();
+    }
 }
