@@ -1,11 +1,12 @@
-package com.github.neji69;
+package com.github.neji69.SpbBank;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import java.util.regex.Pattern;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.title;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class OverviewPage {

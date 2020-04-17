@@ -1,11 +1,12 @@
 package com.github.neji69.Cucumber.stepdefs;
 
-import com.codeborne.selenide.Selenide;
-import com.github.neji69.BspbRuAuth;
-import com.github.neji69.Home;
-import com.github.neji69.OverviewPage;
-import com.github.neji69.TwoFactAuth;
-import io.cucumber.java.ru.*;
+import com.github.neji69.SpbBank.BspbRuAuth;
+import com.github.neji69.SpbBank.Home;
+import com.github.neji69.SpbBank.OverviewPage;
+import com.github.neji69.SpbBank.TwoFactAuth;
+import io.cucumber.java.ru.Дано;
+import io.cucumber.java.ru.Затем;
+import io.cucumber.java.ru.Тогда;
 
 import static com.codeborne.selenide.Selenide.open;
 
@@ -15,7 +16,6 @@ public class SpbBankSteps {
     TwoFactAuth twoFactAuth = new TwoFactAuth();
     Home home = new Home();
     OverviewPage overviewPage = new OverviewPage();
-
 
     //Данные для теста (логин,пароль и смс для авторизации)
     private static final String LOGIN = "demo";
